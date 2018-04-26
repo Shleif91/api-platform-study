@@ -1,8 +1,14 @@
 resources:
-    App\Entity\Product: ~
+    App\Entity\Product:
+        description: 'An product from my shop'
+        attributes:
+            pagination_items_per_page: 20
     App\Entity\Offer:
-        shortName: 'Offer'                   # optional
-        description: 'An offer from my shop' # optional
-        iri: 'http://schema.org/Offer'       # optional
-        attributes:                          # optional
-            pagination_items_per_page: 25    # optional
+        description: 'An offer from my shop'
+        iri: 'http://schema.org/Offer'
+        attributes:
+            pagination_items_per_page: 20
+        collectionOperations:
+            get: ~
+        itemOperations:
+            get: ~
