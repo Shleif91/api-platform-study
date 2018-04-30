@@ -1,9 +1,10 @@
-USER := shleif
+USER = shleif
+CONTAINERS = $(shell docker ps -a -q)
 
 dev:
-	@docker-compose stop && \
-		 sudo docker-compose up -d --build && \
-		 sudo chown -R $(USER):$(USER) ./app
+	@docker-compose stop
+	@sudo docker-compose up -d --build
+	@sudo chown -R $(USER):$(USER) ./app
 
 stop:
 	@docker-compose stop
@@ -11,5 +12,8 @@ stop:
 start:
 	@docker-compose start
 
-chmod:
+chown:
 	@sudo chown -R $(USER):$(USER) ./app
+
+stop_all:
+	@sudo docker

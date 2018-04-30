@@ -6,3 +6,11 @@ api_platform:
             - '%kernel.project_dir%/src/Entity'
             - '%kernel.project_dir%/config/api_platform'
     enable_fos_user: true
+    swagger:
+       api_keys:
+           apiKey:
+              name: Authorization
+              type: header
+
+framework:
+    form: { enabled: true }
